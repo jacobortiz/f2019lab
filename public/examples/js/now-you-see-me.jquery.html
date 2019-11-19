@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Now You See Me</title>
+
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--<img src="images/now-you-see-me.png" />-->
+
+    <div>
+        <button id="hide">Hide the Cat</button>
+        <button id="remove">Remove the Cat</button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        // let image = document.getElementsByTagName("img")[0];
+        let image = $("img");
+        // let hideButton = document.getElementById("hide");
+        let hideButton = $("#hide");
+        // hideButton.addEventListener('click', function(e) {
+        //     // console.log('event', e);
+        //     image.setAttribute('src', 'images/now-you-dont.png');
+        // });
+        hideButton.on('click', function(e) {
+            // console.log('event', e);
+            // console.log(image);
+            // Don't do this...
+            image.get(0).setAttribute('src', 'images/now-you-dont.png');
+        });
+        // let removeButton = document.getElementById("remove");
+        // removeButton.addEventListener('click', function(e) {
+        //     image.setAttribute('class', 'hide');
+        // });
+        $("#remove")
+            .on('click', onRemoveClick)
+            .on('touchstart', onRemoveClick)
+            .html('Removed, Baby!')
+        function onRemoveClick(e) {
+            // image.setAttribute('class', 'hide');
+            image.attr('class', 'hide');
+        }
+    </script>
+</body>
+
+</html>

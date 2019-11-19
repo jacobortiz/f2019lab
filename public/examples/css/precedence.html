@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Precendence</title>
+
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+        div {
+            background-color: red;
+            width: 200px;
+            height: 200px;
+        }
+        .green {
+            background-color: green;
+        }
+        .purple {
+            background-color: purple;
+        }
+        #div2 {
+            background-color: pink;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!--<div style="background-color: yellow;"></div>-->
+    <div class="gold green purple"></div>
+
+    <br />
+
+    <div id="div2" class="green"></div>
+
+    <style>
+        #div2 {
+            background-color: orange;
+        }
+    </style>
+</body>
+
+</html>
+
+<link rel="stylesheet" type="text/css" href="precedence.css">
+<style>
+    .green {
+        background-color: green;
+    }
+</style>
