@@ -1,0 +1,8 @@
+{
+    "env": {
+      "browser": true,
+      "node": true,
+      "jquery": true,
+      "promise": true
+    }
+}
