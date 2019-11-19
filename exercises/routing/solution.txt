@@ -1,0 +1,12 @@
+---------------------------------
+1. Browser file inside public: /public/exercises/routing.js
+
+2. View file inside views: /views/exercises/routing.hbs
+   
+3. Router file inside routes: /routes/exercises/routing.js
+---------------------------------
+Other Things Needed:
+
+A. The layout.hbs file has been modified to add bootstrap and jQuery! 
+  (this will now be forever availale to all my routes---Yeahhh!)
+B. app.js needed to include my router and then .use it!

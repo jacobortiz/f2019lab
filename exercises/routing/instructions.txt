@@ -1,0 +1,18 @@
+---------------------------------
+1. Create .js script in public. This file will run in the browser.
+
+2. Create .hbs or .ejs file that references 
+   the .js created in #1 inside a <script> element.
+   
+3. Create .js script that will server as your router 
+   for this exercise.
+---------------------------------
+
+Your router should have 2 routes:
+
+A. GET route that renders your view, 
+   passing in the title and other info you need.
+   
+B. POST route that passes JSON data up and 
+   receives JSON data back down after a simple modification 
+   you make inside the route.
