@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Truthy-Falsey</title>
+</head>
+
+<body>
+
+    <script>
+        // Equivelncy
+        let numberInt = 10;
+        let numberString = "10";
+        //if (numberInt == numberString && typeof numberInt == typeof numberString) {
+        if (numberInt === numberString) { // !== is the opposite
+            console.log("they are equal");
+        }
+        else {
+            console.log("they are NOT equal");
+        }
+        // Truthy Falsey
+        // False values: 0, false, '', "", NaN, null, undefined
+        
+        let test = function() {
+            return NaN;
+        };
+        
+        let testObject = {
+            id: 100
+        }
+        if (testObject && testObject.id && testObject.name) {
+            console.log('passed');
+        }
+        else {
+            console.log('failed');
+        }
+    </script>
+
+</body>
+
+</html>

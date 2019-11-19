@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Objects</title>
+</head>
+
+<body>
+
+    <script>
+        // Create object with literal
+        let kia = {
+            make: 'kia',
+            model: 'sedona',
+            year: 2019,
+            accelerate: function(rate) {
+                console.log('ka(r): this?', this);
+                console.log('ka(r): accelerating at a rate of', rate)
+            }
+        }
+        // console.log('kia make (dot)', kia.make);
+        // console.log('kia model (indexer)', kia["model"])
+        kia.accelerate(32);
+        kia["accelerate"](9.8);
+        console.log(" ");
+        // Create object with declaration
+        function Car(make, model, year) {
+            console.log("Car this?", this);
+            this.make = make;
+            this.model = model;
+            this.year = year;
+            this.accelerate = function(rate) {
+                console.log('Ca(r): this?', this);
+                console.log('Ca(r): accelerating at a rate of', rate)
+            };
+            // function demo() {
+            //     console.log('Cd(): this?', this);
+            // }
+            // console.log('calling demo as function');
+            // demo();
+            // console.log('calling demo as object');
+            // let demoObject = new demo();
+            // this.demo = demo;
+            //console.log('car this', this);
+            // return this;
+        }
+        console.log('Car as a function');
+        Car();
+        console.log('Car as an object');
+        let mustang = new Car('ford', 'mustang', 1957);
+        mustang.accelerate(32);
+        // mustang.demo();
+        // console.log('creating test object from accelerate function')
+        // let testObject = new mustang.accelerate(0);
+        Car.prototype.decelerate = function(rate) {
+            console.log('Cd(r): this?', this);
+            console.log('Cd(r): decelerating at a rate of', rate)
+        }
+        
+        Car.prototype.stop = function() {
+            console.log('Cs(): this?', this);
+        }
+        
+        mustang.decelerate(-40);
+        mustang.stop();
+        
+        console.log(" ");
+        console.log("Upgrading my kia")
+        
+        Object.setPrototypeOf(kia, new Car());
+        
+        kia.decelerate(-1000);
+        kia.stop();
+    </script>
+
+</body>
+
+</html>
