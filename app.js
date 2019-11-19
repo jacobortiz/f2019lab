@@ -29,8 +29,8 @@ var mysqlRouter = require('./public/examples/mysql/router');
 var lab9Router = require('./public/labs/9/router');
 
 // For exercises
-var routingExerciseRouter = require('./routes/exercises/routing');
-var exerciseRouter = require('./routes/exercises/index');
+//var routingExerciseRouter = require('./routes/exercises/routing');
+//var exerciseRouter = require('./routes/exercises/index');
 
 app.use('/', indexRouter);
 app.use('/mysql', mysqlRouter);
@@ -38,8 +38,8 @@ app.use('/cart', cartRouter);
 app.use('/users', usersRouter);
 app.use('/lookup', lookupRouter);
 // For exercises
-app.use('/exercises/routing', routingExerciseRouter);
-app.use('/exercises', exerciseRouter);
+//app.use('/exercises/routing', routingExerciseRouter);
+//app.use('/exercises', exerciseRouter);
 // For labs
 app.use('/lab/9', lab9Router);
 

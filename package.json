@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "./node_modules/.bin/node ./bin/www",
+    "start": "node ./bin/www",
     "ugle": "ls -al"
   },
   "dependencies": {
@@ -13,7 +13,8 @@
     "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "mysql": "^2.17.1"
+    "mysql": "^2.17.1",
+    "nodemon": "^1.19.4"
   },
   "eslintConfig": {
     "env": {
@@ -22,6 +23,20 @@
       "jquery": true
     }
   },
-  "devDependencies": {
-  }
+  "devDependencies": {},
+  "description": "",
+  "main": "app.js",
+  "bin": {
+    "environment": "basic.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobortiz/f2019lab.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacobortiz/f2019lab/issues"
+  },
+  "homepage": "https://github.com/jacobortiz/f2019lab#readme"
 }
