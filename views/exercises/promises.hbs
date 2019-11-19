@@ -1,0 +1,76 @@
+<script>
+    // 0. Random number between start and end
+    function getRandomNumber(start, end) {
+        return Math.floor(Math.random() * ((end - start) + 1) + start);
+    }
+    console.log('random number', getRandomNumber(0, 5));
+    // 1. Make synchronous function call using return
+    function getFullNameReturn(first, last) {
+        let fullName = `${first} ${last}`;
+        return fullName;
+    }
+    let fullNameReturn = getFullNameReturn('Jacob', 'Ortiz');
+    console.log('(sync, return): full name is', fullNameReturn);
+    // 2. Return with fake "by ref" object
+    function getFullNameByRef(first, last, output) {
+        let fullName = `${first} ${last}`;
+        output.value = fullName;
+    }
+    let output = {};
+    getFullNameByRef('Jakey', 'Ortiz', output);
+    let fullNameByRef = output.value;
+    console.log('(sync, by ref): full name is', fullNameByRef);
+    // 3. Return value with callback function
+    function getFullNameByCallback(first, last, done, fail) {
+        console.log('(async, by callback): starting callback...')
+        try {
+            let fullName = `${first} ${last}`;
+            //throw new Error('(async, by callback): bad stuff happening');
+            if (done) {
+                done(fullName);
+            }
+        }
+        catch (err) {
+            if (fail) {
+                fail(err);
+            }
+        }
+        console.log('(async, by callback): done with callback.')
+    }
+    console.log('(async, by callback): before callback function fired');
+    getFullNameByCallback('Jason', 'Henderson',
+        function(fullName) {
+            console.log('(async, by callback): full name is', fullName);
+        },
+        function(err) {
+            console.log('(async, by callback): error is', err);
+        });
+    console.log('(async, by callback): callback function fired');
+    // 4. Return value with promise object
+    function getFullNameByPromise(first, last) {
+        return new Promise(function(resolve, reject) {
+            console.log('(async, by promise): starting promise...')
+            try {
+                let fullName = `${first} ${last}`;
+                //throw new Error('(async, by promise): bad stuff happening');
+                resolve(fullName);
+            }
+            catch (err) {
+                reject(err);
+            }
+            console.log('(async, by promise): done with promise.')
+        });
+    }
+    console.log('(async, by promise): before callback function fired');
+    // Define the promise
+    let promiseFullName = getFullNameByPromise('Jacob', 'Ortiz');
+    // Make good on the promise
+    promiseFullName
+        .then(function(fullName) {
+            console.log('(async, by promise): full name is', fullName);
+        })
+        .catch(function(err) {
+            console.log('(async, by promise): error is', err);
+        })
+    console.log('(async, by promise): callback function fired');
+</script>
