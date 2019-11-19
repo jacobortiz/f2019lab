@@ -1,0 +1,19 @@
+<h1>{{title}}</h1>
+<p>What are all the quotes?</p>
+<!-- DO THIS WITH FLEXBOX OR BOOTSTRAP GRID INSTEAD OF TABLE-->
+<table>
+    <thead>
+        <tr>
+            <th>quote</th>
+            <th>author</th>
+        </tr>
+    </thead>
+    <tbody>
+{{#each quotes}}
+        <tr>
+            <td class="w-50">{{quote}}</td>
+            <td>{{fullName}}</td>
+        </tr>
+{{/each}}
+    </tbody>
+</table>
