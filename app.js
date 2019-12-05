@@ -27,6 +27,7 @@ var usersRouter = require('./routes/users');
 var lookupRouter = require('./routes/lookup');
 var mysqlRouter = require('./public/examples/mysql/router');
 var lab9Router = require('./public/labs/9/router');
+var lab10Router = require('./public/labs/10/router');
 
 // For exercises
 //var routingExerciseRouter = require('./routes/exercises/routing');
@@ -42,6 +43,7 @@ app.use('/lookup', lookupRouter);
 //app.use('/exercises', exerciseRouter);
 // For labs
 app.use('/lab/9', lab9Router);
+app.use('/lab/10', lab10Router);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

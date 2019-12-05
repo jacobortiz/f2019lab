@@ -5,7 +5,7 @@ const constants = require('./constants');
 
 app.use(function(req, res, next) {
     console.log('inside mw 1')
-    req.htmlText = "Hello Jason, how is your day going?"
+    req.htmlText = "Hello how is your day going?"
     next();
 })
 

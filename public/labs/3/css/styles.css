@@ -1,0 +1,23 @@
+body {
+    text-align: left;
+    background-size: cover;
+    background-color: #C5E6F8;;
+}
+
+.jumbotron {
+    background-color: #17a2b8;;
+}
+
+#directions {
+    background-color: #edf2f9;
+    font-size: 2em;
+    width: 900px;
+    height: 400px !important;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.text-center {
+    background-color: lightblue;
+}
+    
