@@ -33,12 +33,12 @@ var cartRouter = require('./routes/cart');
 var usersRouter = require('./routes/users');
 var lookupRouter = require('./routes/lookup');
 app.use('/', indexRouter);
-app.use('/mysql', mysqlRouter);
+//app.use('/mysql', mysqlRouter);
 app.use('/cart', cartRouter);
 app.use('/users', usersRouter);
 app.use('/lookup', lookupRouter);
 
-var mysqlRouter = require('./public/examples/mysql/router');
+//var mysqlRouter = require('./public/examples/mysql/router');
 
 //var routingExerciseRouter = require('./routes/exercises/routing');
 //var exerciseRouter = require('./routes/exercises/index');
@@ -50,10 +50,10 @@ var mysqlRouter = require('./public/examples/mysql/router');
 // For labs
 var lab9Router = require('./public/labs/9/router');
 var lab10Router = require('./public/labs/10/router');
-var lab10BRouter = require('./public/labs/10B/router');
+//var lab10BRouter = require('./public/labs/10B/router');
 app.use('/lab/9', lab9Router);
 app.use('/lab/10', lab10Router);
-app.use('/lab/10B', lab10BRouter);
+//app.use('/lab/10B', lab10BRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

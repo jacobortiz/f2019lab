@@ -10,7 +10,7 @@ router.get('/quotes', function(req, res, next) {
     l9_author a ON q.authorId = a.authorId
     `;
     
-    const connetion = mysql.createConnection({
+    const connection = mysql.createConnection({
         host:       'bfjrxdpxrza9qllq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
         user:       's3r4i1e1wxsw844i',
         password:   'd05nbbxmn9v8fnm0',
