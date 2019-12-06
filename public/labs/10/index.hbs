@@ -7,7 +7,7 @@
             <th>category</th>
             <th>author</th>
             <th>
-                <a class="btn btn-info " href="/lab/10/quotes/edit"> Add Quote</a>
+                <a class="btn btn-info" href="/lab/10/quotes/edit">Add Quote</a>
             </th>
         </tr>
     </thead>
@@ -18,8 +18,8 @@
             <td class="w-25">{{category}}</td>
             <td>{{fullName}}</td>
             <td>
-                <a class="btn btn-primary " href="/lab/10/quotes/edit?id={{quoteId}}">Edit</a>
-                <a class="btn btn-danger" href="/lab/10/quotes/edit?id={{quoteId}}">Delete</a>
+                <a class="btn btn-primary" href="/lab/10/quotes/edit?id={{quoteId}}">Edit</a>
+                <a class="btn btn-danger" href="/lab/10/quotes/delete?id={{quoteId}}">Delete</a>
             </td>
         </tr>
 {{/each}}
