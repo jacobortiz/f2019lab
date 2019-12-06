@@ -1,6 +1,5 @@
 <h1>{{title}}</h1>
 <p>What are all the quotes?</p>
-<!-- DO THIS WITH FLEXBOX OR BOOTSTRAP GRID INSTEAD OF TABLE-->
 <table>
     <thead>
         <tr>
@@ -8,7 +7,7 @@
             <th>category</th>
             <th>author</th>
             <th>
-                <a href="x"
+                <a class="btn btn-info " href="/lab/10/quotes/edit"> Add Quote</a>
             </th>
         </tr>
     </thead>
@@ -16,8 +15,12 @@
 {{#each quotes}}
         <tr>
             <td class="w-50">{{quote}}</td>
-            <td class="w-50">{{quote}}</td>
+            <td class="w-25">{{category}}</td>
             <td>{{fullName}}</td>
+            <td>
+                <a class="btn btn-primary " href="/lab/10/quotes/edit?id={{quoteId}}">Edit</a>
+                <a class="btn btn-danger" href="/lab/10/quotes/edit?id={{quoteId}}">Delete</a>
+            </td>
         </tr>
 {{/each}}
     </tbody>

@@ -8,10 +8,10 @@ router.get('/quotes', function(req, res, next) {
     const keyword = req.query.k;
     
     const connection = mysql.createConnection({
-        host: 'c9cujduvu830eexs.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-        user: 'xilg924lwjugbvxo',
-        password: 'xr9u6eh6vacb89xw',
-        database: 'to40c4q9kr08chkl'
+        host:       'bfjrxdpxrza9qllq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+        user:       's3r4i1e1wxsw844i',
+        password:   'd05nbbxmn9v8fnm0',
+        database:   'wigtng4xxhrfmiba'
     });
 
     connection.connect();
@@ -26,7 +26,7 @@ OR a.firstName LIKE '${keyword}'
         if (error) throw error;
 
         res.render('../public/labs/9/index', {
-            title: 'Jason\'s Lab 9',
+            title: 'jacob\'s Lab 9',
             quotes: results
         });
     });

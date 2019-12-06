@@ -6,6 +6,13 @@ var logger = require('morgan');
 
 var app = express();
 
+//setup session
+/*
+app.use(session({
+  'secret': 'Kfv34cz2WC'
+}));
+*/
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -25,25 +32,28 @@ var indexRouter = require('./routes/index');
 var cartRouter = require('./routes/cart');
 var usersRouter = require('./routes/users');
 var lookupRouter = require('./routes/lookup');
-var mysqlRouter = require('./public/examples/mysql/router');
-var lab9Router = require('./public/labs/9/router');
-var lab10Router = require('./public/labs/10/router');
-
-// For exercises
-//var routingExerciseRouter = require('./routes/exercises/routing');
-//var exerciseRouter = require('./routes/exercises/index');
-
 app.use('/', indexRouter);
 app.use('/mysql', mysqlRouter);
 app.use('/cart', cartRouter);
 app.use('/users', usersRouter);
 app.use('/lookup', lookupRouter);
+
+var mysqlRouter = require('./public/examples/mysql/router');
+
+//var routingExerciseRouter = require('./routes/exercises/routing');
+//var exerciseRouter = require('./routes/exercises/index');
+
 // For exercises
 //app.use('/exercises/routing', routingExerciseRouter);
 //app.use('/exercises', exerciseRouter);
+
 // For labs
+var lab9Router = require('./public/labs/9/router');
+var lab10Router = require('./public/labs/10/router');
+var lab10BRouter = require('./public/labs/10B/router');
 app.use('/lab/9', lab9Router);
 app.use('/lab/10', lab10Router);
+app.use('/lab/10B', lab10BRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
