@@ -23,7 +23,7 @@
         <small id="categoryHelp" class="form-text text-muted">General category, e.g Humor, Wisdom, Religious.</small>
     </div>
     <div class="form-group">
-        <button id="deleteButton" class="btn btn-danger">Delete</button>
+        <button class="btn btn-danger ">Delete</button>
         <button id="cancelButton" class="btn btn-secondary">Cancel</button>
     </div>
     <div class="form-group">
@@ -55,8 +55,8 @@
                 error: function(xhr, status, error) {
                     console.error(xhr.responseText);
                 },
-                complete: function(data, status) { //optional, used for debugging purposes
-                    //console.log(status);
+                complete: function(data, status) { 
+                    console.log(status);
                 }
             });
         });

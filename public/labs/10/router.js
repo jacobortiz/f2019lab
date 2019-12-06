@@ -118,7 +118,7 @@ router.get('/quotes/delete', function(req, res, next) {
     const id = req.query.id;
 
     if (!id || id.length === 0) {
-        return next(new Error('nothing to delete'));
+        return next(new Error('nothing to delete, couldnt figure it out...'));
     }
     // TODO: Lookup the data and provide results to the view 
     // to show an existing quote
